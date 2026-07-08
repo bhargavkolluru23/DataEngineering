@@ -1,0 +1,15 @@
+{
+	"name": "devserverpractice",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Disabled",
+			"editable": true
+		}
+	},
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "b4031307-7d3a-4469-9358-9c1c3401ea9a",
+		"tenantId": "c84408ee-31f6-4934-93ec-5cdc354e9713"
+	}
+}
