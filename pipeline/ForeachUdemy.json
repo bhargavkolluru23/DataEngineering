@@ -1,6 +1,19 @@
 {
-	"name": "Foreach",
+	"name": "ForeachUdemy",
 	"properties": {
+		"activities": [
+			{
+				"name": "ForEach1",
+				"type": "ForEach",
+				"dependsOn": [],
+				"userProperties": []
+			}
+		],
+		"parameters": {
+			"Numbers": {
+				"type": "array"
+			}
+		},
 		"annotations": []
 	}
 }
