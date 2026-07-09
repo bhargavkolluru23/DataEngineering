@@ -8,6 +8,11 @@
 				"dependsOn": [],
 				"userProperties": [],
 				"typeProperties": {
+					"items": {
+						"value": "@pipeline().parameters.countries",
+						"type": "Expression"
+					},
+					"isSequential": true,
 					"activities": [
 						{
 							"name": "Set variable1",
@@ -17,7 +22,14 @@
 								"secureOutput": true,
 								"secureInput": true
 							},
-							"userProperties": []
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "V",
+								"value": {
+									"value": "@item()",
+									"type": "Expression"
+								}
+							}
 						}
 					]
 				}
@@ -27,6 +39,11 @@
 			"countries": {
 				"type": "array",
 				"defaultValue": "['\"India\",\"UK\",\"US\"]"
+			}
+		},
+		"variables": {
+			"V": {
+				"type": "String"
 			}
 		},
 		"annotations": []
