@@ -1,0 +1,6 @@
+{
+	"name": "CopyEachFiletoSqlTable",
+	"properties": {
+		"annotations": []
+	}
+}
