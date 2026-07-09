@@ -38,7 +38,11 @@
 		"parameters": {
 			"countries": {
 				"type": "array",
-				"defaultValue": "['\"India\",\"UK\",\"US\"]"
+				"defaultValue": [
+					"India",
+					"UK",
+					"US"
+				]
 			}
 		},
 		"variables": {
