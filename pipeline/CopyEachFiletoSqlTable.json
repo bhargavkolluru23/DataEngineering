@@ -24,11 +24,28 @@
 					],
 					"storeSettings": {
 						"type": "AzureBlobFSReadSettings",
+						"recursive": true,
 						"enablePartitionDiscovery": false
 					},
 					"formatSettings": {
 						"type": "DelimitedTextReadSettings"
 					}
+				}
+			},
+			{
+				"name": "Loop in files",
+				"type": "ForEach",
+				"dependsOn": [
+					{
+						"activity": "GetAllFiles",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"isSequential": true
 				}
 			}
 		],
