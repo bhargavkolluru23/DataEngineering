@@ -19,8 +19,8 @@
 							"type": "SetVariable",
 							"dependsOn": [],
 							"policy": {
-								"secureOutput": true,
-								"secureInput": true
+								"secureOutput": false,
+								"secureInput": false
 							},
 							"userProperties": [],
 							"typeProperties": {
