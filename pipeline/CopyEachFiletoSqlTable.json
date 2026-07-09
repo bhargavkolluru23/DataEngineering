@@ -87,7 +87,13 @@
 							"inputs": [
 								{
 									"referenceName": "DS_CSV",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"SourceFileName": {
+											"value": "@variables('FileName')",
+											"type": "Expression"
+										}
+									}
 								}
 							]
 						},
