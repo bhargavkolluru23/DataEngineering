@@ -8,6 +8,10 @@
 				"dependsOn": [],
 				"userProperties": [],
 				"typeProperties": {
+					"items": {
+						"value": "@pipeline().parameters.Numbers",
+						"type": "Expression"
+					},
 					"activities": [
 						{
 							"name": "Set variable1",
@@ -33,7 +37,11 @@
 		"parameters": {
 			"Numbers": {
 				"type": "array",
-				"defaultValue": "1,2,3"
+				"defaultValue": [
+					1,
+					2,
+					3
+				]
 			}
 		},
 		"variables": {
