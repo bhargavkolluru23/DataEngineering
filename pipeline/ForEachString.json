@@ -1,0 +1,20 @@
+{
+	"name": "ForEachString",
+	"properties": {
+		"activities": [
+			{
+				"name": "ForEach1",
+				"type": "ForEach",
+				"dependsOn": [],
+				"userProperties": []
+			}
+		],
+		"parameters": {
+			"countries": {
+				"type": "array",
+				"defaultValue": "['\"India\",\"]"
+			}
+		},
+		"annotations": []
+	}
+}
