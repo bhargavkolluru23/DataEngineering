@@ -73,7 +73,8 @@
 		],
 		"parameters": {
 			"Numbers": {
-				"type": "array"
+				"type": "array",
+				"defaultValue": "1,2,3"
 			}
 		},
 		"annotations": []
