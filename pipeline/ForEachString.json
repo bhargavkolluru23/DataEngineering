@@ -6,13 +6,27 @@
 				"name": "ForEach1",
 				"type": "ForEach",
 				"dependsOn": [],
-				"userProperties": []
+				"userProperties": [],
+				"typeProperties": {
+					"activities": [
+						{
+							"name": "Set variable1",
+							"type": "SetVariable",
+							"dependsOn": [],
+							"policy": {
+								"secureOutput": true,
+								"secureInput": true
+							},
+							"userProperties": []
+						}
+					]
+				}
 			}
 		],
 		"parameters": {
 			"countries": {
 				"type": "array",
-				"defaultValue": "['\"India\",\"]"
+				"defaultValue": "['\"India\",\"UK\",\"US\"]"
 			}
 		},
 		"annotations": []
