@@ -86,7 +86,7 @@
 							},
 							"inputs": [
 								{
-									"referenceName": "CSV",
+									"referenceName": "DS_CSV",
 									"type": "DatasetReference"
 								}
 							]
