@@ -16,7 +16,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"dataset": {
-						"referenceName": "DelimitedText9",
+						"referenceName": "DelimitedText10",
 						"type": "DatasetReference"
 					},
 					"fieldList": [],
@@ -51,12 +51,23 @@
 								"secureOutput": false,
 								"secureInput": false
 							},
-							"userProperties": []
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "FileName",
+								"value": ""
+							}
 						},
 						{
 							"name": "Copy data1",
 							"type": "Copy",
-							"dependsOn": [],
+							"dependsOn": [
+								{
+									"activity": "Set variable1",
+									"dependencyConditions": [
+										"Succeeded"
+									]
+								}
+							],
 							"policy": {
 								"timeout": "0.12:00:00",
 								"retry": 0,
