@@ -9,7 +9,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"variableName": "X",
-					"value": ""
+					"value": "Bhargav"
 				}
 			}
 		],
@@ -19,6 +19,9 @@
 				"defaultValue": [
 					"['Ram','Raju']"
 				]
+			},
+			"output": {
+				"type": "Array"
 			}
 		},
 		"annotations": []
