@@ -29,10 +29,11 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"variableName": "X",
-					"value": [
-						""
-					]
+					"variableName": "output",
+					"value": {
+						"value": "@variables('X')",
+						"type": "Expression"
+					}
 				}
 			}
 		],
