@@ -9,7 +9,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"variableName": "X",
-					"value": ""
+					"value": "1000"
 				}
 			},
 			{
@@ -30,10 +30,9 @@
 				"userProperties": [],
 				"typeProperties": {
 					"variableName": "X",
-					"value": {
-						"value": "@variables('X')",
-						"type": "Expression"
-					}
+					"value": [
+						""
+					]
 				}
 			}
 		],
