@@ -3,15 +3,22 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Append variable1",
+				"name": "Append",
 				"type": "AppendVariable",
 				"dependsOn": [],
-				"userProperties": []
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "X",
+					"value": ""
+				}
 			}
 		],
 		"variables": {
 			"X": {
-				"type": "Array"
+				"type": "Array",
+				"defaultValue": [
+					"['Ram','Raju']"
+				]
 			}
 		},
 		"annotations": []
