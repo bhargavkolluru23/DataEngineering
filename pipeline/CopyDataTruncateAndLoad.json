@@ -28,7 +28,10 @@
 					},
 					"sink": {
 						"type": "AzureSqlSink",
-						"preCopyScript": "tru",
+						"preCopyScript": {
+							"value": "Truncate table dbo.TruncateTable",
+							"type": "Expression"
+						},
 						"writeBehavior": "insert",
 						"sqlWriterUseTableLock": false,
 						"tableOption": "autoCreate",
