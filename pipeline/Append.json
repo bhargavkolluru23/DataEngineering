@@ -1,0 +1,19 @@
+{
+	"name": "Append",
+	"properties": {
+		"activities": [
+			{
+				"name": "Append variable1",
+				"type": "AppendVariable",
+				"dependsOn": [],
+				"userProperties": []
+			}
+		],
+		"variables": {
+			"X": {
+				"type": "Array"
+			}
+		},
+		"annotations": []
+	}
+}
