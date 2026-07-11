@@ -28,7 +28,6 @@
 					},
 					"sink": {
 						"type": "AzureSqlSink",
-						"preCopyScript": "TRUNCATE TABLE [dbo.].[TruncateTable]",
 						"writeBehavior": "upsert",
 						"upsertSettings": {
 							"useTempDB": true,
