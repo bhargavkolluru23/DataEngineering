@@ -35,6 +35,16 @@
 						"type": "Expression"
 					}
 				}
+			},
+			{
+				"name": "Append_copy1",
+				"type": "AppendVariable",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "X",
+					"value": "1000"
+				}
 			}
 		],
 		"variables": {
