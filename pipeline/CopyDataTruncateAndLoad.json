@@ -55,7 +55,7 @@
 						"type": "DatasetReference",
 						"parameters": {
 							"TableName": {
-								"value": "@variables('Truncate')",
+								"value": "TruncateTable",
 								"type": "Expression"
 							}
 						}
