@@ -9,16 +9,16 @@
 				"userProperties": [],
 				"typeProperties": {
 					"variableName": "X",
-					"value": "Bhargav"
+					"value": {
+						"value": "@variables('output')",
+						"type": "Expression"
+					}
 				}
 			}
 		],
 		"variables": {
 			"X": {
-				"type": "Array",
-				"defaultValue": [
-					"['Ram','Raju']"
-				]
+				"type": "Array"
 			},
 			"output": {
 				"type": "Array"
