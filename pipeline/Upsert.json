@@ -1,5 +1,5 @@
 {
-	"name": "CopyDataTruncateAndLoad_copy1",
+	"name": "Upsert",
 	"properties": {
 		"activities": [
 			{
@@ -29,7 +29,13 @@
 					"sink": {
 						"type": "AzureSqlSink",
 						"preCopyScript": "TRUNCATE TABLE [dbo.].[TruncateTable]",
-						"writeBehavior": "insert",
+						"writeBehavior": "upsert",
+						"upsertSettings": {
+							"useTempDB": true,
+							"keys": [
+								""
+							]
+						},
 						"sqlWriterUseTableLock": false,
 						"tableOption": "autoCreate",
 						"disableMetricsCollection": false
