@@ -29,7 +29,9 @@
 					"sink": {
 						"type": "AzureSqlSink",
 						"writeBehavior": "insert",
-						"sqlWriterUseTableLock": false
+						"sqlWriterUseTableLock": false,
+						"tableOption": "autoCreate",
+						"disableMetricsCollection": false
 					},
 					"enableStaging": false,
 					"translator": {
@@ -50,11 +52,22 @@
 				"outputs": [
 					{
 						"referenceName": "AzureSqlTable1",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"TableName": {
+								"value": "@variables('Truncate')",
+								"type": "Expression"
+							}
+						}
 					}
 				]
 			}
 		],
+		"variables": {
+			"Truncate": {
+				"type": "String"
+			}
+		},
 		"annotations": []
 	}
 }
