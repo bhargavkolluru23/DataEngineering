@@ -37,7 +37,7 @@
 				}
 			},
 			{
-				"name": "Append_copy1",
+				"name": "Append1",
 				"description": "2000",
 				"type": "AppendVariable",
 				"dependsOn": [
@@ -59,7 +59,7 @@
 				"type": "SetVariable",
 				"dependsOn": [
 					{
-						"activity": "Append_copy1",
+						"activity": "Append1",
 						"dependencyConditions": [
 							"Succeeded"
 						]
