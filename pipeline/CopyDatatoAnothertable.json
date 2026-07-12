@@ -22,8 +22,10 @@
 					},
 					"sink": {
 						"type": "AzureSqlSink",
+						"preCopyScript": "select au.username ,au.mobile_no  from [dbo.].app_users au join [dbo.].app_user_role_mappings aurm  on aurm.app_user_id=au.id;",
 						"writeBehavior": "insert",
-						"sqlWriterUseTableLock": false
+						"sqlWriterUseTableLock": false,
+						"disableMetricsCollection": false
 					},
 					"enableStaging": false,
 					"translator": {
@@ -44,7 +46,10 @@
 				"outputs": [
 					{
 						"referenceName": "AzureSqlTable1",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"TableName": "app_user_mapping_table"
+						}
 					}
 				]
 			}
