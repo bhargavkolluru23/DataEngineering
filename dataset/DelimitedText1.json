@@ -10,8 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"folderPath": "CSV",
-				"fileSystem": "source"
+				"fileSystem": "upldata"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
