@@ -19,8 +19,7 @@
 					"value": "@dataset().SourceFileName",
 					"type": "Expression"
 				},
-				"folderPath": "CSV",
-				"fileSystem": "source"
+				"fileSystem": "upldata"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
