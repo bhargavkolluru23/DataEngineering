@@ -47,6 +47,10 @@
 					"items": {
 						"value": "@activity('Get Delete').output.childItems",
 						"type": "Expression"
+					},
+					"condition": {
+						"value": "@equals(item().Type,'File' )",
+						"type": "Expression"
 					}
 				}
 			}
