@@ -189,7 +189,19 @@
 										"typeProperties": {
 											"dataset": {
 												"referenceName": "DS_Size",
-												"type": "DatasetReference"
+												"type": "DatasetReference",
+												"parameters": {
+													"SourceFileName": {
+														"value": "@variables('FileName')",
+														"type": "Expression"
+													}
+												}
+											},
+											"logStorageSettings": {
+												"linkedServiceName": {
+													"referenceName": "AzureDataLakeStorage1",
+													"type": "LinkedServiceReference"
+												}
 											},
 											"enableLogging": true,
 											"storeSettings": {
