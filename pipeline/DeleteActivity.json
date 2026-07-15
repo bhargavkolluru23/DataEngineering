@@ -201,7 +201,8 @@
 												"linkedServiceName": {
 													"referenceName": "AzureDataLakeStorage1",
 													"type": "LinkedServiceReference"
-												}
+												},
+												"path": "logs"
 											},
 											"enableLogging": true,
 											"storeSettings": {
