@@ -157,7 +157,7 @@
 							}
 						},
 						{
-							"name": "If Condition1",
+							"name": "DeleteFileSize",
 							"type": "IfCondition",
 							"dependsOn": [
 								{
@@ -167,7 +167,13 @@
 									]
 								}
 							],
-							"userProperties": []
+							"userProperties": [],
+							"typeProperties": {
+								"expression": {
+									"value": "@lessOrEquals(variables('Size'),1024 )",
+									"type": "Expression"
+								}
+							}
 						}
 					]
 				}
