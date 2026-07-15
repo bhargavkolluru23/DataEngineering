@@ -49,7 +49,7 @@
 						"type": "Expression"
 					},
 					"condition": {
-						"value": "@equals(item().Type,'File' )",
+						"value": "@equals(item().type ,'File')",
 						"type": "Expression"
 					}
 				}
@@ -67,10 +67,31 @@
 				],
 				"userProperties": [],
 				"typeProperties": {
-					"isSequential": true
+					"items": {
+						"value": "@activity('Filter1').output",
+						"type": "Expression"
+					},
+					"isSequential": true,
+					"activities": [
+						{
+							"name": "Set File Name",
+							"type": "SetVariable",
+							"dependsOn": [],
+							"policy": {
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": []
+						}
+					]
 				}
 			}
 		],
+		"variables": {
+			"FileName": {
+				"type": "String"
+			}
+		},
 		"annotations": []
 	}
 }
