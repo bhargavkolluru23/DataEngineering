@@ -10,8 +10,8 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"folderPath": "all files",
-				"fileSystem": "source"
+				"folderPath": "007.ADFDatasets/YearWise",
+				"fileSystem": "dataenginnering"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
