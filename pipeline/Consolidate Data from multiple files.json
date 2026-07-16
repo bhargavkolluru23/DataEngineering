@@ -91,7 +91,11 @@
 									"type": "DelimitedTextSource",
 									"additionalColumns": [
 										{
-											"value": "$$FILENAME"
+											"name": "Country",
+											"value": {
+												"value": "@replace(variables('Countries'), '.csv', '')",
+												"type": "Expression"
+											}
 										}
 									],
 									"storeSettings": {
