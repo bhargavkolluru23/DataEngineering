@@ -89,6 +89,11 @@
 							"typeProperties": {
 								"source": {
 									"type": "DelimitedTextSource",
+									"additionalColumns": [
+										{
+											"value": "$$FILENAME"
+										}
+									],
 									"storeSettings": {
 										"type": "AzureBlobFSReadSettings",
 										"recursive": true,
@@ -103,7 +108,13 @@
 							"inputs": [
 								{
 									"referenceName": "DelimitedText12",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"Country": {
+											"value": "@variables('Countries')",
+											"type": "Expression"
+										}
+									}
 								}
 							]
 						}
