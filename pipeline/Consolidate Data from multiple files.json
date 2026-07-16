@@ -129,7 +129,7 @@
 									"referenceName": "DelimitedText12",
 									"type": "DatasetReference",
 									"parameters": {
-										"Country": {
+										"ParamCountry": {
 											"value": "@variables('Countries')",
 											"type": "Expression"
 										}

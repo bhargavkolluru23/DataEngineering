@@ -6,7 +6,7 @@
 			"type": "LinkedServiceReference"
 		},
 		"parameters": {
-			"Country": {
+			"ParamCountry": {
 				"type": "string"
 			}
 		},
@@ -16,7 +16,7 @@
 			"location": {
 				"type": "AzureBlobFSLocation",
 				"fileName": {
-					"value": "@dataset().Country",
+					"value": "@dataset().ParamCountry",
 					"type": "Expression"
 				},
 				"folderPath": "007.ADFDatasets/Countries",
