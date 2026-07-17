@@ -125,14 +125,8 @@
 							],
 							"outputs": [
 								{
-									"referenceName": "AzureSqlTable1",
-									"type": "DatasetReference",
-									"parameters": {
-										"TableName": {
-											"value": "@replace(variables('FileName'),'csv','')",
-											"type": "Expression"
-										}
-									}
+									"referenceName": "AzureSqlTable3",
+									"type": "DatasetReference"
 								}
 							]
 						}
