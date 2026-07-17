@@ -92,6 +92,8 @@
 									"storeSettings": {
 										"type": "AzureBlobFSReadSettings",
 										"recursive": true,
+										"wildcardFolderPath": "007.ADFDatasets",
+										"wildcardFileName": "InvoiceData.xlsx",
 										"enablePartitionDiscovery": false
 									},
 									"formatSettings": {
