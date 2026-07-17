@@ -8,13 +8,13 @@
 		"annotations": [],
 		"type": "Excel",
 		"typeProperties": {
+			"sheetName": "Sheet1",
 			"location": {
 				"type": "AzureBlobFSLocation",
 				"fileName": "InvoiceData.xlsx",
 				"folderPath": "007.ADFDatasets",
 				"fileSystem": "dataenginnering"
-			},
-			"sheetIndex": 0
+			}
 		},
 		"schema": []
 	}
