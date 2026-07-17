@@ -10,7 +10,8 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"folderPath": "007.ADFDatasets/YearWise",
+				"fileName": "InvoiceData.xlsx",
+				"folderPath": "007.ADFDatasets",
 				"fileSystem": "dataenginnering"
 			},
 			"columnDelimiter": ",",
