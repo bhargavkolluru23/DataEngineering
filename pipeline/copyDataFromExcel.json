@@ -91,7 +91,6 @@
 									"type": "DelimitedTextSource",
 									"storeSettings": {
 										"type": "AzureBlobFSReadSettings",
-										"recursive": true,
 										"enablePartitionDiscovery": false
 									},
 									"formatSettings": {
@@ -106,6 +105,77 @@
 								"enableStaging": false,
 								"translator": {
 									"type": "TabularTranslator",
+									"mappings": [
+										{
+											"source": {
+												"name": "OrderDate",
+												"type": "String",
+												"physicalType": "String"
+											},
+											"sink": {
+												"name": "YEAR",
+												"type": "Int32",
+												"physicalType": "int"
+											}
+										},
+										{
+											"source": {
+												"name": "ProductKey",
+												"type": "String",
+												"physicalType": "String"
+											},
+											"sink": {
+												"name": "MONTH",
+												"type": "Int32",
+												"physicalType": "int"
+											}
+										},
+										{
+											"source": {
+												"name": "EnglishProductName",
+												"type": "String",
+												"physicalType": "String"
+											},
+											"sink": {
+												"name": "INVOICEID",
+												"type": "String",
+												"physicalType": "nvarchar"
+											}
+										},
+										{
+											"source": {
+												"name": "SalesAmount",
+												"type": "String",
+												"physicalType": "String"
+											},
+											"sink": {
+												"name": "COUNTRY",
+												"type": "String",
+												"physicalType": "nvarchar"
+											}
+										},
+										{
+											"source": {
+												"name": "TaxAmt",
+												"type": "String",
+												"physicalType": "String"
+											},
+											"sink": {
+												"name": "REGION",
+												"type": "String",
+												"physicalType": "nvarchar"
+											}
+										},
+										{
+											"sink": {
+												"name": "SALES",
+												"type": "Decimal",
+												"physicalType": "money",
+												"scale": 4,
+												"precision": 19
+											}
+										}
+									],
 									"typeConversion": true,
 									"typeConversionSettings": {
 										"allowDataTruncation": true,
