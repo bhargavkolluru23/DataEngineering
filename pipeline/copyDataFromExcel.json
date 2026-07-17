@@ -44,6 +44,10 @@
 				],
 				"userProperties": [],
 				"typeProperties": {
+					"items": {
+						"value": "@activity('CopyExcelData').output.childItems",
+						"type": "Expression"
+					},
 					"activities": [
 						{
 							"name": "getDataFromExcel",
@@ -57,7 +61,7 @@
 							"typeProperties": {
 								"variableName": "FileNamr",
 								"value": {
-									"value": "@item()",
+									"value": "@item().name",
 									"type": "Expression"
 								}
 							}
