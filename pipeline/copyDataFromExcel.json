@@ -91,7 +91,7 @@
 									"type": "DelimitedTextSource",
 									"storeSettings": {
 										"type": "AzureBlobFSReadSettings",
-										"fileListPath": "dataenginnering/007.ADFDatasets/InvoiceData.xlsx",
+										"recursive": true,
 										"enablePartitionDiscovery": false
 									},
 									"formatSettings": {
