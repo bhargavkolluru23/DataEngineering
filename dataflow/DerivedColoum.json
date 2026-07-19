@@ -30,7 +30,9 @@
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> DerivedCOloum",
-				"DerivedCOloum derive(year = year(OrderDate)) ~> derivedColumn"
+				"DerivedCOloum derive(year = year(OrderDate),",
+				"          month = month(datetime),",
+				"          day = ERROR_FUNCTION('')) ~> derivedColumn"
 			]
 		}
 	}
