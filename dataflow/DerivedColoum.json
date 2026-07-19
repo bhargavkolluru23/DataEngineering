@@ -30,7 +30,7 @@
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> DerivedCOloum",
-				"DerivedCOloum derive() ~> derivedColumn"
+				"DerivedCOloum derive(year = year(OrderDate)) ~> derivedColumn"
 			]
 		}
 	}
