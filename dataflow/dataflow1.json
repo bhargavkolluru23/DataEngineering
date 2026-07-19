@@ -21,7 +21,11 @@
 					"name": "OrdersNewIndia"
 				},
 				{
-					"name": "sink1"
+					"dataset": {
+						"referenceName": "AzureSqlTable11",
+						"type": "DatasetReference"
+					},
+					"name": "OrderNewFrance"
 				}
 			],
 			"transformations": [
@@ -56,8 +60,14 @@
 				"     errorHandlingOption: 'stopOnFirstError') ~> OrdersNewIndia",
 				"split1@France sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
+				"     deletable:false,",
+				"     insertable:true,",
+				"     updateable:false,",
+				"     upsertable:false,",
+				"     format: 'table',",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> sink1"
+				"     skipDuplicateMapOutputs: true,",
+				"     errorHandlingOption: 'stopOnFirstError') ~> OrderNewFrance"
 			]
 		}
 	}
