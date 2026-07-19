@@ -1,5 +1,5 @@
 {
-	"name": "dataflow1",
+	"name": "DerivedColoum",
 	"properties": {
 		"type": "MappingDataFlow",
 		"typeProperties": {
@@ -9,15 +9,20 @@
 						"referenceName": "DS_OrderNew",
 						"type": "DatasetReference"
 					},
-					"name": "source1"
+					"name": "DerivedCOloum"
 				}
 			],
 			"sinks": [],
-			"transformations": [],
+			"transformations": [
+				{
+					"name": "derivedColumn"
+				}
+			],
 			"scriptLines": [
 				"source(allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     ignoreNoFilesFound: false) ~> source1"
+				"     ignoreNoFilesFound: false) ~> DerivedCOloum",
+				"DerivedCOloum derive() ~> derivedColumn"
 			]
 		}
 	}
