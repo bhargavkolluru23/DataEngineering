@@ -14,7 +14,7 @@
 			],
 			"sinks": [
 				{
-					"name": "sink1"
+					"name": "sinkSort"
 				}
 			],
 			"transformations": [
@@ -38,7 +38,7 @@
 				"filter1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> sink1"
+				"     skipDuplicateMapOutputs: true) ~> sinkSort"
 			]
 		}
 	}
