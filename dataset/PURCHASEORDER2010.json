@@ -1,5 +1,5 @@
 {
-	"name": "DelimitedText14",
+	"name": "PURCHASEORDER2010",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureDataLakeStorage1",
@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "OrdersPiped.csv",
+				"fileName": "PURCHASE2010.csv",
 				"folderPath": "007.ADFDatasets",
 				"fileSystem": "dataenginnering"
 			},

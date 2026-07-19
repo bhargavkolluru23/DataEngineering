@@ -1,26 +1,53 @@
 {
-	"name": "dataflow1",
+	"name": "sortDataflow",
 	"properties": {
 		"type": "MappingDataFlow",
 		"typeProperties": {
 			"sources": [
 				{
 					"dataset": {
-						"referenceName": "DelimitedText14",
+						"referenceName": "PURCHASEORDER2010",
 						"type": "DatasetReference"
 					},
 					"name": "source1"
 				}
 			],
-			"sinks": [],
-			"transformations": [],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "AzureSqlTable7",
+						"type": "DatasetReference"
+					},
+					"name": "sinkSort"
+				}
+			],
+			"transformations": [
+				{
+					"name": "sort"
+				}
+			],
 			"scriptLines": [
 				"source(output(",
-				"          {OrderDate|ProductKey|Country|EnglishProductName|SalesAmount|TaxAmt} as string",
+				"          DATE as date 'dd/MM/yyyy',",
+				"          COUNTRY as string,",
+				"          PRODUCT as string,",
+				"          SALES as short",
 				"     ),",
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     ignoreNoFilesFound: false) ~> source1"
+				"     ignoreNoFilesFound: false) ~> source1",
+				"source1 sort(desc(COUNTRY, true),",
+				"     asc(DATE, true)) ~> sort",
+				"sort sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     deletable:false,",
+				"     insertable:true,",
+				"     updateable:false,",
+				"     upsertable:false,",
+				"     format: 'table',",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     errorHandlingOption: 'stopOnFirstError') ~> sinkSort"
 			]
 		}
 	}
