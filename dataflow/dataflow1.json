@@ -31,7 +31,8 @@
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> source1",
 				"source1 split(Country=='India',",
-				"     disjoint: false) ~> split1@(India, Other)"
+				"     Country=='India',",
+				"     disjoint: false) ~> split1@(India, France, Other)"
 			]
 		}
 	}
