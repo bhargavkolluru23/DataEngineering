@@ -6,7 +6,7 @@
 			"sources": [
 				{
 					"dataset": {
-						"referenceName": "InvoiceDataset",
+						"referenceName": "DelimitedText14",
 						"type": "DatasetReference"
 					},
 					"name": "source1"
@@ -15,7 +15,10 @@
 			"sinks": [],
 			"transformations": [],
 			"scriptLines": [
-				"source(allowSchemaDrift: true,",
+				"source(output(",
+				"          {OrderDate|ProductKey|Country|EnglishProductName|SalesAmount|TaxAmt} as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> source1"
 			]
