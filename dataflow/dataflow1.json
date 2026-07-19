@@ -6,7 +6,7 @@
 			"sources": [
 				{
 					"dataset": {
-						"referenceName": "DS_CSV",
+						"referenceName": "DelimitedText14",
 						"type": "DatasetReference"
 					},
 					"name": "readDataflow"
@@ -16,10 +16,12 @@
 			"transformations": [],
 			"scriptLines": [
 				"source(output(",
-				"          EMPID as string,",
-				"          EMPNAME as string,",
-				"          SALARY as string,",
-				"          Month as string",
+				"          Column_1 as string,",
+				"          Column_2 as string,",
+				"          Column_3 as string,",
+				"          Column_4 as string,",
+				"          Column_5 as string,",
+				"          Column_6 as string",
 				"     ),",
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
