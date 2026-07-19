@@ -12,7 +12,11 @@
 					"name": "source1"
 				}
 			],
-			"sinks": [],
+			"sinks": [
+				{
+					"name": "sink"
+				}
+			],
 			"transformations": [
 				{
 					"name": "selectColoums"
@@ -37,7 +41,11 @@
 				"          SALES",
 				"     ),",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> selectColoums"
+				"     skipDuplicateMapOutputs: true) ~> selectColoums",
+				"selectColoums sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> sink"
 			]
 		}
 	}
