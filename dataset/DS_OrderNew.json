@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "OrdersNew.csv",
+				"fileName": "PURCHASE2010.csv",
 				"folderPath": "007.ADFDatasets",
 				"fileSystem": "dataenginnering"
 			},
