@@ -12,12 +12,20 @@
 					"name": "readCSV"
 				}
 			],
-			"sinks": [],
+			"sinks": [
+				{
+					"name": "sink"
+				}
+			],
 			"transformations": [],
 			"scriptLines": [
 				"source(allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     ignoreNoFilesFound: false) ~> readCSV"
+				"     ignoreNoFilesFound: false) ~> readCSV",
+				"readCSV sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> sink"
 			]
 		}
 	}
