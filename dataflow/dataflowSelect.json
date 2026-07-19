@@ -1,12 +1,12 @@
 {
-	"name": "dataflow1",
+	"name": "dataflowSelect",
 	"properties": {
 		"type": "MappingDataFlow",
 		"typeProperties": {
 			"sources": [
 				{
 					"dataset": {
-						"referenceName": "DelimitedText14",
+						"referenceName": "DS_InvoiceData",
 						"type": "DatasetReference"
 					},
 					"name": "readDataflow"

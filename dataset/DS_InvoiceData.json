@@ -1,5 +1,5 @@
 {
-	"name": "DelimitedText14",
+	"name": "DS_InvoiceData",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureDataLakeStorage1",
