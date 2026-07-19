@@ -24,7 +24,7 @@
 			"transformations": [],
 			"scriptLines": [
 				"source(output(",
-				"          DATE as date 'dd-MM-yyyy',",
+				"          DATE as date 'dd/MM/yyyy',",
 				"          COUNTRY as string,",
 				"          PRODUCT as string,",
 				"          SALES as short",
