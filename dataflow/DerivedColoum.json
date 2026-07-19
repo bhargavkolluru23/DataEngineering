@@ -28,7 +28,7 @@
 			],
 			"scriptLines": [
 				"source(output(",
-				"          DATE as date 'dd/MM/yyyy',",
+				"          DATE as date 'yyyy/MM/dd',",
 				"          COUNTRY as string,",
 				"          PRODUCT as string,",
 				"          SALES as short",
