@@ -12,7 +12,11 @@
 					"name": "DerivedCOloum"
 				}
 			],
-			"sinks": [],
+			"sinks": [
+				{
+					"name": "sink1"
+				}
+			],
 			"transformations": [
 				{
 					"name": "derivedColumn"
@@ -34,7 +38,11 @@
 				"          month = month(OrderDate),",
 				"          day = dayOfMonth(OrderDate),",
 				"          MonthName = toString(OrderDate, 'MMMM'),",
-				"          Tax = ERROR_FUNCTION('')) ~> derivedColumn"
+				"          Tax = SalesAmount*0.05) ~> derivedColumn",
+				"derivedColumn sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> sink1"
 			]
 		}
 	}
