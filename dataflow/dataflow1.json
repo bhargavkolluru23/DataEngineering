@@ -6,7 +6,7 @@
 			"sources": [
 				{
 					"dataset": {
-						"referenceName": "CountriesData",
+						"referenceName": "DelimitedText14",
 						"type": "DatasetReference"
 					},
 					"name": "source1"
