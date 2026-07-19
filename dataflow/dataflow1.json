@@ -12,7 +12,18 @@
 					"name": "source1"
 				}
 			],
-			"sinks": [],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "AzureSqlTable10",
+						"type": "DatasetReference"
+					},
+					"name": "OrdersNewIndia"
+				},
+				{
+					"name": "sink1"
+				}
+			],
 			"transformations": [
 				{
 					"name": "split1"
@@ -32,7 +43,21 @@
 				"     ignoreNoFilesFound: false) ~> source1",
 				"source1 split(Country=='India',",
 				"     Country=='France',",
-				"     disjoint: false) ~> split1@(India, France)"
+				"     disjoint: false) ~> split1@(India, France)",
+				"split1@India sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     deletable:false,",
+				"     insertable:true,",
+				"     updateable:false,",
+				"     upsertable:false,",
+				"     format: 'table',",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     errorHandlingOption: 'stopOnFirstError') ~> OrdersNewIndia",
+				"split1@France sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> sink1"
 			]
 		}
 	}
