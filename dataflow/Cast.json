@@ -5,14 +5,24 @@
 		"typeProperties": {
 			"sources": [
 				{
+					"dataset": {
+						"referenceName": "DelimitedText16",
+						"type": "DatasetReference"
+					},
 					"name": "Castsource"
 				}
 			],
 			"sinks": [],
-			"transformations": [],
+			"transformations": [
+				{
+					"name": "cast1"
+				}
+			],
 			"scriptLines": [
 				"source(allowSchemaDrift: true,",
-				"     validateSchema: false) ~> Castsource"
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> Castsource",
+				"Castsource cast(errors: true) ~> cast1"
 			]
 		}
 	}
