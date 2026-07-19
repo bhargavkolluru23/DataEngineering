@@ -13,7 +13,12 @@
 				}
 			],
 			"sinks": [],
-			"transformations": [],
+			"transformations": [
+				{
+					"name": "MapDrifted1",
+					"description": "Creates an explicit mapping for each drifted column"
+				}
+			],
 			"scriptLines": [
 				"source(output(",
 				"          Column_1 as string,",
@@ -25,7 +30,13 @@
 				"     ),",
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     ignoreNoFilesFound: false) ~> readDataflow"
+				"     ignoreNoFilesFound: false) ~> readDataflow",
+				"readDataflow derive(YEAR = toString(byName('YEAR')),",
+				"          MONTH = toString(byName('MONTH')),",
+				"          INVOICEID = toString(byName('INVOICEID')),",
+				"          COUNTRY = toString(byName('COUNTRY')),",
+				"          REGION = toString(byName('REGION')),",
+				"          SALES = toString(byName('SALES'))) ~> MapDrifted1"
 			]
 		}
 	}
