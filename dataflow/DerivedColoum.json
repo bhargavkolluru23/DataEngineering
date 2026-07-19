@@ -33,7 +33,8 @@
 				"DerivedCOloum derive(year = year(OrderDate),",
 				"          month = month(OrderDate),",
 				"          day = dayOfMonth(OrderDate),",
-				"          MonthName = toString(OrderDate, 'MMMM')) ~> derivedColumn"
+				"          MonthName = toString(OrderDate, 'MMMM'),",
+				"          Tax = ERROR_FUNCTION('')) ~> derivedColumn"
 			]
 		}
 	}
