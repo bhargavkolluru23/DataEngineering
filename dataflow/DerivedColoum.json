@@ -31,9 +31,9 @@
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> DerivedCOloum",
 				"DerivedCOloum derive(year = year(OrderDate),",
-				"          month = month(datetime),",
+				"          month = month(OrderDate),",
 				"          day = dayOfMonth(OrderDate),",
-				"          MonthName = ERROR_FUNCTION('')) ~> derivedColumn"
+				"          MonthName = toString(OrderDate, 'MMMM')) ~> derivedColumn"
 			]
 		}
 	}
