@@ -6,7 +6,7 @@
 			"sources": [
 				{
 					"dataset": {
-						"referenceName": "DS_OrderNew",
+						"referenceName": "DelimitedText14",
 						"type": "DatasetReference"
 					},
 					"name": "source1"
@@ -20,10 +20,12 @@
 			],
 			"scriptLines": [
 				"source(output(",
-				"          DATE as date 'MM/dd/yyyy',",
-				"          COUNTRY as string,",
-				"          PRODUCT as string,",
-				"          SALES as short",
+				"          OrderDate as date 'dd-MM-yyyy',",
+				"          ProductKey as short,",
+				"          Country as string,",
+				"          EnglishProductName as string,",
+				"          SalesAmount as double,",
+				"          TaxAmt as double",
 				"     ),",
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
