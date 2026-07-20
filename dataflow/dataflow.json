@@ -12,10 +12,21 @@
 					"name": "source1"
 				}
 			],
-			"sinks": [],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "Window",
+						"type": "DatasetReference"
+					},
+					"name": "sinkwindow"
+				}
+			],
 			"transformations": [
 				{
 					"name": "window1"
+				},
+				{
+					"name": "aggregateWindow"
 				}
 			],
 			"scriptLines": [
@@ -30,7 +41,22 @@
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> source1",
-				"source1 window() ~> window1"
+				"aggregateWindow window(over(OrderDateYear = year(OrderDate),",
+				"          OrderDateMonth = month(OrderDate)),",
+				"     desc(OrderDate, true),",
+				"     {Cummalative Sales} = sum({total Sales})) ~> window1",
+				"source1 aggregate(groupBy(OrderDate),",
+				"     {total Sales} = sum(SalesAmount)+sum(TaxAmt)) ~> aggregateWindow",
+				"window1 sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     deletable:false,",
+				"     insertable:true,",
+				"     updateable:false,",
+				"     upsertable:false,",
+				"     format: 'table',",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     errorHandlingOption: 'stopOnFirstError') ~> sinkwindow"
 			]
 		}
 	}

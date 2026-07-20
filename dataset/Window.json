@@ -1,0 +1,16 @@
+{
+	"name": "Window",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LinkServer",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo.",
+			"table": "OrderWindow"
+		}
+	}
+}
