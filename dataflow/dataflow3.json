@@ -14,7 +14,11 @@
 			],
 			"sinks": [
 				{
-					"name": "sink1"
+					"dataset": {
+						"referenceName": "PivotTable",
+						"type": "DatasetReference"
+					},
+					"name": "sinkPivot"
 				}
 			],
 			"transformations": [
@@ -41,8 +45,14 @@
 				"     lateral: true) ~> pivot",
 				"pivot sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
+				"     deletable:false,",
+				"     insertable:true,",
+				"     updateable:false,",
+				"     upsertable:false,",
+				"     format: 'table',",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> sink1"
+				"     skipDuplicateMapOutputs: true,",
+				"     errorHandlingOption: 'stopOnFirstError') ~> sinkPivot"
 			]
 		}
 	}
