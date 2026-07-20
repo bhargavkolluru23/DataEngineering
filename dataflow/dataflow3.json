@@ -6,7 +6,7 @@
 			"sources": [
 				{
 					"dataset": {
-						"referenceName": "DelimitedText16",
+						"referenceName": "OrderNewCommon",
 						"type": "DatasetReference"
 					},
 					"name": "source1"

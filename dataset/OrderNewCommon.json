@@ -1,5 +1,5 @@
 {
-	"name": "DelimitedText16",
+	"name": "OrderNewCommon",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureDataLakeStorage1",
