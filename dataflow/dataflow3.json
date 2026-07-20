@@ -15,7 +15,7 @@
 			"sinks": [],
 			"transformations": [
 				{
-					"name": "pivot1"
+					"name": "pivot"
 				}
 			],
 			"scriptLines": [
@@ -30,8 +30,10 @@
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> source1",
-				"source1 pivot(columnNaming: '$N$V',",
-				"     lateral: true) ~> pivot1"
+				"source1 pivot(groupBy(EnglishProductName),",
+				"     pivotBy(Country),",
+				"     columnNaming: '$N$V',",
+				"     lateral: true) ~> pivot"
 			]
 		}
 	}
