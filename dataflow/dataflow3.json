@@ -12,7 +12,11 @@
 					"name": "source1"
 				}
 			],
-			"sinks": [],
+			"sinks": [
+				{
+					"name": "sink1"
+				}
+			],
 			"transformations": [
 				{
 					"name": "pivot"
@@ -34,7 +38,11 @@
 				"     pivotBy(Country),",
 				"     {} = sum(SalesAmount) + sum(TaxAmt),",
 				"     columnNaming: '$N$V',",
-				"     lateral: true) ~> pivot"
+				"     lateral: true) ~> pivot",
+				"pivot sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> sink1"
 			]
 		}
 	}
