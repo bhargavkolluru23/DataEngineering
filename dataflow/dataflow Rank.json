@@ -1,0 +1,53 @@
+{
+	"name": "dataflow Rank",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "DelimitedText17",
+						"type": "DatasetReference"
+					},
+					"name": "sourceRank"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "AzureSqlTable15",
+						"type": "DatasetReference"
+					},
+					"name": "Ranksink"
+				}
+			],
+			"transformations": [
+				{
+					"name": "rankData"
+				}
+			],
+			"scriptLines": [
+				"source(output(",
+				"          EnglishProductName as string,",
+				"          SalesAmount as double",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> sourceRank",
+				"sourceRank rank(desc(SalesAmount, true),",
+				"     output(Ranks as long),",
+				"     dense: true) ~> rankData",
+				"rankData sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     deletable:false,",
+				"     insertable:true,",
+				"     updateable:false,",
+				"     upsertable:false,",
+				"     format: 'table',",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     errorHandlingOption: 'stopOnFirstError') ~> Ranksink"
+			]
+		}
+	}
+}
