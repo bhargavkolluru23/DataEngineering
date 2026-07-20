@@ -1,0 +1,16 @@
+{
+	"name": "PivotTable",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LinkServer",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo.",
+			"table": "OrdersPivot"
+		}
+	}
+}
