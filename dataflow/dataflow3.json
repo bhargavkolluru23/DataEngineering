@@ -32,7 +32,7 @@
 				"     ignoreNoFilesFound: false) ~> source1",
 				"source1 pivot(groupBy(EnglishProductName),",
 				"     pivotBy(Country),",
-				"     {} = sum(SalesAmount),",
+				"     {} = sum(SalesAmount) + sum(TaxAmt),",
 				"     columnNaming: '$N$V',",
 				"     lateral: true) ~> pivot"
 			]
