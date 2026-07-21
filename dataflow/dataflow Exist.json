@@ -35,7 +35,11 @@
 					"name": "sinkExist"
 				}
 			],
-			"transformations": [],
+			"transformations": [
+				{
+					"name": "exists1"
+				}
+			],
 			"scriptLines": [
 				"source(output(",
 				"          ProductKey as short,",
@@ -55,7 +59,10 @@
 				"source(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> source3",
-				"source1 sink(allowSchemaDrift: true,",
+				"source1, source2 exists(ERROR_FUNCTION('') == ERROR_FUNCTION(''),",
+				"     negate:false,",
+				"     broadcast: 'auto')~> exists1",
+				"exists1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     deletable:false,",
 				"     insertable:true,",
