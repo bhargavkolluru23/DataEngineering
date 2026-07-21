@@ -1,5 +1,5 @@
 {
-	"name": "dataflow7",
+	"name": "dataflowStringify",
 	"properties": {
 		"type": "MappingDataFlow",
 		"typeProperties": {
