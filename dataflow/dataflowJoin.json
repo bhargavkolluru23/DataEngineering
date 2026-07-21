@@ -9,7 +9,7 @@
 						"referenceName": "LookUpProducts",
 						"type": "DatasetReference"
 					},
-					"name": "source1"
+					"name": "sourceProduct"
 				},
 				{
 					"dataset": {
@@ -39,14 +39,18 @@
 				"     ),",
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     ignoreNoFilesFound: false) ~> source1",
-				"source(allowSchemaDrift: true,",
+				"     ignoreNoFilesFound: false) ~> sourceProduct",
+				"source(output(",
+				"          CustomerKey as short,",
+				"          FullName as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> source2",
 				"source(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> source3",
-				"source1, source2 join(ERROR_FUNCTION('') == ERROR_FUNCTION(''),",
+				"sourceProduct, source2 join(ERROR_FUNCTION('') == ERROR_FUNCTION(''),",
 				"     joinType:'inner',",
 				"     matchType:'exact',",
 				"     ignoreSpaces: false,",
