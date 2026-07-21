@@ -29,7 +29,7 @@
 			"sinks": [],
 			"transformations": [
 				{
-					"name": "join1"
+					"name": "joinProducts"
 				}
 			],
 			"scriptLines": [
@@ -42,11 +42,11 @@
 				"source(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> source3",
-				"source1 join(ERROR_FUNCTION('') == ERROR_FUNCTION(''),",
+				"source1, source2 join(ERROR_FUNCTION('') == ERROR_FUNCTION(''),",
 				"     joinType:'inner',",
 				"     matchType:'exact',",
 				"     ignoreSpaces: false,",
-				"     broadcast: 'auto')~> join1"
+				"     broadcast: 'auto')~> joinProducts"
 			]
 		}
 	}
