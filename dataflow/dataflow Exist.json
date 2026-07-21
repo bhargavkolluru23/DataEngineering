@@ -37,7 +37,7 @@
 			],
 			"transformations": [
 				{
-					"name": "exists1"
+					"name": "exists"
 				}
 			],
 			"scriptLines": [
@@ -56,13 +56,17 @@
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> source2",
-				"source(allowSchemaDrift: true,",
+				"source(output(",
+				"          CustomerKey as short,",
+				"          FullName as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> source3",
-				"source1, source2 exists(ERROR_FUNCTION('') == ERROR_FUNCTION(''),",
+				"source1, source2 exists(source1@ProductKey == source2@ProductKey,",
 				"     negate:false,",
-				"     broadcast: 'auto')~> exists1",
-				"exists1 sink(allowSchemaDrift: true,",
+				"     broadcast: 'auto')~> exists",
+				"exists sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     deletable:false,",
 				"     insertable:true,",
