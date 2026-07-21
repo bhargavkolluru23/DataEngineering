@@ -70,7 +70,7 @@
 				"     multiple: false,",
 				"     pickup: 'any',",
 				"     broadcast: 'auto')~> lookup",
-				"lookup, source3 lookup(source2@ProductKey == ERROR_FUNCTION(''),",
+				"lookup, source3 lookup(source2@ProductKey == source3@ProductKey,",
 				"     multiple: false,",
 				"     pickup: 'any',",
 				"     broadcast: 'auto')~> lookupCustomers",
@@ -86,12 +86,12 @@
 				"     errorHandlingOption: 'stopOnFirstError',",
 				"     mapColumn(",
 				"          CustomerKey = source1@CustomerKey,",
-				"          FullName = source1@FullName,",
-				"          ProductKey,",
+				"          FullName,",
+				"          ProductKey = source2@ProductKey,",
 				"          CustomerKey = source2@CustomerKey,",
 				"          SalesAmount,",
-				"          CustomerKey = source3@CustomerKey,",
-				"          FullName = source3@FullName",
+				"          ProductKey = source3@ProductKey,",
+				"          EnglishProductName",
 				"     )) ~> sink1"
 			]
 		}
