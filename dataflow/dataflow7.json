@@ -12,17 +12,41 @@
 					"name": "source1"
 				},
 				{
+					"dataset": {
+						"referenceName": "LookUpCustomer",
+						"type": "DatasetReference"
+					},
 					"name": "source2"
+				},
+				{
+					"dataset": {
+						"referenceName": "LookUpSales",
+						"type": "DatasetReference"
+					},
+					"name": "source3"
 				}
 			],
 			"sinks": [],
-			"transformations": [],
+			"transformations": [
+				{
+					"name": "join1"
+				}
+			],
 			"scriptLines": [
 				"source(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> source1",
 				"source(allowSchemaDrift: true,",
-				"     validateSchema: false) ~> source2"
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> source2",
+				"source(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> source3",
+				"source1 join(ERROR_FUNCTION('') == ERROR_FUNCTION(''),",
+				"     joinType:'inner',",
+				"     matchType:'exact',",
+				"     ignoreSpaces: false,",
+				"     broadcast: 'auto')~> join1"
 			]
 		}
 	}
