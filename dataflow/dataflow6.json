@@ -20,7 +20,7 @@
 				},
 				{
 					"dataset": {
-						"referenceName": "LookUpCustomer",
+						"referenceName": "LookUpProducts",
 						"type": "DatasetReference"
 					},
 					"name": "source3"
@@ -59,11 +59,7 @@
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> source2",
-				"source(output(",
-				"          CustomerKey as short,",
-				"          FullName as string",
-				"     ),",
-				"     allowSchemaDrift: true,",
+				"source(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> source3",
 				"source1, source2 lookup(source1@CustomerKey == source2@CustomerKey,",
