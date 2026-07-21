@@ -20,7 +20,11 @@
 					"name": "sink1"
 				}
 			],
-			"transformations": [],
+			"transformations": [
+				{
+					"name": "flatten1"
+				}
+			],
 			"scriptLines": [
 				"source(output(",
 				"          Items as string[],",
@@ -33,7 +37,15 @@
 				"     documentForm: 'arrayOfDocuments') ~> source1",
 				"source(allowSchemaDrift: true,",
 				"     validateSchema: false) ~> source2",
-				"source1 sink(allowSchemaDrift: true,",
+				"source1 foldDown(unroll(Items),",
+				"     mapColumn(",
+				"          Items,",
+				"          OrderDate,",
+				"          OrderId",
+				"     ),",
+				"     skipDuplicateMapInputs: false,",
+				"     skipDuplicateMapOutputs: false) ~> flatten1",
+				"flatten1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true) ~> sink1"
