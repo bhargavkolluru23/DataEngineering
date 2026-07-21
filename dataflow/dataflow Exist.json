@@ -12,17 +12,37 @@
 					"name": "source1"
 				},
 				{
+					"dataset": {
+						"referenceName": "LookUpProducts",
+						"type": "DatasetReference"
+					},
 					"name": "source2"
+				},
+				{
+					"dataset": {
+						"referenceName": "LookUpCustomer",
+						"type": "DatasetReference"
+					},
+					"name": "source3"
 				}
 			],
 			"sinks": [],
 			"transformations": [],
 			"scriptLines": [
-				"source(allowSchemaDrift: true,",
+				"source(output(",
+				"          ProductKey as short,",
+				"          CustomerKey as short,",
+				"          SalesAmount as double",
+				"     ),",
+				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> source1",
 				"source(allowSchemaDrift: true,",
-				"     validateSchema: false) ~> source2"
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> source2",
+				"source(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> source3"
 			]
 		}
 	}
