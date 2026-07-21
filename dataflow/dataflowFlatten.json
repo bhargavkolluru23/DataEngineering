@@ -5,6 +5,10 @@
 		"typeProperties": {
 			"sources": [
 				{
+					"dataset": {
+						"referenceName": "Json1",
+						"type": "DatasetReference"
+					},
 					"name": "source1"
 				},
 				{
@@ -19,7 +23,9 @@
 			"transformations": [],
 			"scriptLines": [
 				"source(allowSchemaDrift: true,",
-				"     validateSchema: false) ~> source1",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false,",
+				"     documentForm: 'documentPerLine') ~> source1",
 				"source(allowSchemaDrift: true,",
 				"     validateSchema: false) ~> source2",
 				"source1 sink(allowSchemaDrift: true,",
