@@ -17,15 +17,22 @@
 						"type": "DatasetReference"
 					},
 					"name": "source2"
-				},
-				{
-					"name": "source3"
 				}
 			],
 			"sinks": [],
-			"transformations": [],
+			"transformations": [
+				{
+					"name": "union1"
+				}
+			],
 			"scriptLines": [
-				"source(allowSchemaDrift: true,",
+				"source(output(",
+				"          EMPID as short,",
+				"          EMPNAME as string,",
+				"          SALARY as integer,",
+				"          Month as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> source1",
 				"source(output(",
@@ -37,8 +44,7 @@
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> source2",
-				"source(allowSchemaDrift: true,",
-				"     validateSchema: false) ~> source3"
+				"source1 union(byName: true)~> union1"
 			]
 		}
 	}
