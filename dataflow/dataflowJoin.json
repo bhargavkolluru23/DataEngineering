@@ -72,7 +72,7 @@
 				"     ignoreSpaces: false,",
 				"     broadcast: 'auto')~> joinProducts",
 				"joinProducts, sourceCustomers join(sourceSales@CustomerKey == sourceCustomers@CustomerKey,",
-				"     joinType:'outer',",
+				"     joinType:'inner',",
 				"     matchType:'exact',",
 				"     ignoreSpaces: false,",
 				"     broadcast: 'auto')~> join1",
