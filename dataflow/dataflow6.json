@@ -41,7 +41,7 @@
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> source2",
-				"source1 lookup(ERROR_FUNCTION('') == ERROR_FUNCTION(''),",
+				"source1, source2 lookup(source1@CustomerKey == source2@CustomerKey,",
 				"     multiple: false,",
 				"     pickup: 'any',",
 				"     broadcast: 'auto')~> lookup"
