@@ -1,0 +1,22 @@
+{
+	"name": "Excel3",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"sheetName": "OrderDetails",
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "OrderDetails.xlsx",
+				"folderPath": "007.ADFDatasets",
+				"fileSystem": "dataenginnering"
+			},
+			"firstRowAsHeader": true
+		},
+		"schema": []
+	}
+}

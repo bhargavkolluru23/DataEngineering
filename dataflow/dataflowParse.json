@@ -1,0 +1,74 @@
+{
+	"name": "dataflowParse",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "Excel3",
+						"type": "DatasetReference"
+					},
+					"name": "ParseSource"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "AzureSqlTable19",
+						"type": "DatasetReference"
+					},
+					"name": "sinkParse"
+				}
+			],
+			"transformations": [
+				{
+					"name": "parse1"
+				},
+				{
+					"name": "parse2"
+				}
+			],
+			"scriptLines": [
+				"source(output(",
+				"          OrderId as integer,",
+				"          OrderDate as date,",
+				"          OrderDetails as string,",
+				"          BatchDetails as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> ParseSource",
+				"ParseSource parse(OrderDet = OrderDetails ? (Items as string,",
+				"          Qty as integer,",
+				"          Price as integer),",
+				"     format: 'delimited',",
+				"     columnNamesAsHeader: false,",
+				"     columnDelimiter: '|',",
+				"     nullValue: '') ~> parse1",
+				"parse1 parse(BatchDET = BatchDetails ? (batchid as integer,",
+				"          site as string),",
+				"     format: 'json',",
+				"     documentForm: 'arrayOfDocuments') ~> parse2",
+				"parse2 sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     deletable:false,",
+				"     insertable:true,",
+				"     updateable:false,",
+				"     upsertable:false,",
+				"     format: 'table',",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     errorHandlingOption: 'stopOnFirstError',",
+				"     mapColumn(",
+				"          OrderId,",
+				"          OrderDate,",
+				"          OrderDetails,",
+				"          BatchDetails,",
+				"          OrderDet,",
+				"          BatchDET",
+				"     )) ~> sinkParse"
+			]
+		}
+	}
+}
