@@ -12,6 +12,10 @@
 					"name": "source1"
 				},
 				{
+					"dataset": {
+						"referenceName": "DS_Union2",
+						"type": "DatasetReference"
+					},
 					"name": "source2"
 				},
 				{
@@ -24,8 +28,15 @@
 				"source(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> source1",
-				"source(allowSchemaDrift: true,",
-				"     validateSchema: false) ~> source2",
+				"source(output(",
+				"          EMPLOYEENAME as string,",
+				"          EMPLOYENAME as string,",
+				"          EMPSALARY as string,",
+				"          Monthname as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> source2",
 				"source(allowSchemaDrift: true,",
 				"     validateSchema: false) ~> source3"
 			]
