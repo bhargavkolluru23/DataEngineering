@@ -1,5 +1,5 @@
 {
-	"name": "LookUpCustomer",
+	"name": "LookUpSales",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureDataLakeStorage1",
@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "Customers.csv",
+				"fileName": "Sales.csv",
 				"folderPath": "007.ADFDatasets/Lookup",
 				"fileSystem": "dataenginnering"
 			},

@@ -6,12 +6,16 @@
 			"sources": [
 				{
 					"dataset": {
-						"referenceName": "DelimitedText20",
+						"referenceName": "LookUpCustomer",
 						"type": "DatasetReference"
 					},
 					"name": "source1"
 				},
 				{
+					"dataset": {
+						"referenceName": "LookUpSales",
+						"type": "DatasetReference"
+					},
 					"name": "source2"
 				}
 			],
@@ -26,7 +30,8 @@
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> source1",
 				"source(allowSchemaDrift: true,",
-				"     validateSchema: false) ~> source2"
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> source2"
 			]
 		}
 	}
