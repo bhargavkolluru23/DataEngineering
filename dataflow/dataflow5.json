@@ -20,7 +20,7 @@
 				},
 				{
 					"dataset": {
-						"referenceName": "DelimitedText18",
+						"referenceName": "DS_Union1",
 						"type": "DatasetReference"
 					},
 					"name": "source3"
@@ -59,13 +59,7 @@
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> source2",
-				"source(output(",
-				"          SALARY as integer,",
-				"          Month as string,",
-				"          EMPNAME as string,",
-				"          EMPID as short",
-				"     ),",
-				"     allowSchemaDrift: true,",
+				"source(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> source3",
 				"source1, source2, source3 union(byName: false)~> union1",
