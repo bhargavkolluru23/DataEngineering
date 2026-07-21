@@ -1,5 +1,5 @@
 {
-	"name": "dataflow7",
+	"name": "dataflowJoin",
 	"properties": {
 		"type": "MappingDataFlow",
 		"typeProperties": {
@@ -33,7 +33,11 @@
 				}
 			],
 			"scriptLines": [
-				"source(allowSchemaDrift: true,",
+				"source(output(",
+				"          ProductKey as short,",
+				"          EnglishProductName as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> source1",
 				"source(allowSchemaDrift: true,",
