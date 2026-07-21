@@ -19,6 +19,10 @@
 					"name": "source2"
 				},
 				{
+					"dataset": {
+						"referenceName": "DelimitedText18",
+						"type": "DatasetReference"
+					},
 					"name": "source3"
 				}
 			],
@@ -55,9 +59,16 @@
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> source2",
-				"source(allowSchemaDrift: true,",
-				"     validateSchema: false) ~> source3",
-				"source1, source2 union(byName: false)~> union1",
+				"source(output(",
+				"          SALARY as integer,",
+				"          Month as string,",
+				"          EMPNAME as string,",
+				"          EMPID as short",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> source3",
+				"source1, source2, source3 union(byName: false)~> union1",
 				"union1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     deletable:false,",
