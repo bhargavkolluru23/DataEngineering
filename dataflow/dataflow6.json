@@ -17,6 +17,9 @@
 						"type": "DatasetReference"
 					},
 					"name": "source2"
+				},
+				{
+					"name": "source3"
 				}
 			],
 			"sinks": [],
@@ -41,6 +44,8 @@
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> source2",
+				"source(allowSchemaDrift: true,",
+				"     validateSchema: false) ~> source3",
 				"source1, source2 lookup(source1@CustomerKey == source2@CustomerKey,",
 				"     multiple: false,",
 				"     pickup: 'any',",
