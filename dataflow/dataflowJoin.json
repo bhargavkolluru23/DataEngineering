@@ -56,7 +56,7 @@
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> sourceSales",
 				"sourceProduct, sourceSales join(sourceProduct@ProductKey == sourceSales@ProductKey,",
-				"     joinType:'inner',",
+				"     joinType:'outer',",
 				"     matchType:'exact',",
 				"     ignoreSpaces: false,",
 				"     broadcast: 'auto')~> joinProducts"
