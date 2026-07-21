@@ -86,10 +86,12 @@
 				"     errorHandlingOption: 'stopOnFirstError',",
 				"     mapColumn(",
 				"          CustomerKey = source1@CustomerKey,",
-				"          FullName,",
+				"          FullName = source1@FullName,",
 				"          ProductKey,",
 				"          CustomerKey = source2@CustomerKey,",
-				"          SalesAmount",
+				"          SalesAmount,",
+				"          CustomerKey = source3@CustomerKey,",
+				"          FullName = source3@FullName",
 				"     )) ~> sink1"
 			]
 		}
