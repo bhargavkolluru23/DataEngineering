@@ -62,7 +62,14 @@
 				"     format: 'table',",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true,",
-				"     errorHandlingOption: 'stopOnFirstError') ~> sink1"
+				"     errorHandlingOption: 'stopOnFirstError',",
+				"     mapColumn(",
+				"          CustomerKey = source1@CustomerKey,",
+				"          FullName,",
+				"          ProductKey,",
+				"          CustomerKey = source2@CustomerKey,",
+				"          SalesAmount",
+				"     )) ~> sink1"
 			]
 		}
 	}
