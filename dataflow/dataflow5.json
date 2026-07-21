@@ -5,24 +5,14 @@
 		"typeProperties": {
 			"sources": [
 				{
-					"dataset": {
-						"referenceName": "OrderNewCommon",
-						"type": "DatasetReference"
-					},
 					"name": "source1"
 				}
 			],
 			"sinks": [],
-			"transformations": [
-				{
-					"name": "window1"
-				}
-			],
+			"transformations": [],
 			"scriptLines": [
 				"source(allowSchemaDrift: true,",
-				"     validateSchema: false,",
-				"     ignoreNoFilesFound: false) ~> source1",
-				"source1 window() ~> window1"
+				"     validateSchema: false) ~> source1"
 			]
 		}
 	}
