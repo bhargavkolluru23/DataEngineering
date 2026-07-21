@@ -16,14 +16,14 @@
 						"referenceName": "LookUpCustomer",
 						"type": "DatasetReference"
 					},
-					"name": "source2"
+					"name": "sourceCustomers"
 				},
 				{
 					"dataset": {
 						"referenceName": "LookUpSales",
 						"type": "DatasetReference"
 					},
-					"name": "source3"
+					"name": "sourceSales"
 				}
 			],
 			"sinks": [],
@@ -46,11 +46,16 @@
 				"     ),",
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     ignoreNoFilesFound: false) ~> source2",
-				"source(allowSchemaDrift: true,",
+				"     ignoreNoFilesFound: false) ~> sourceCustomers",
+				"source(output(",
+				"          ProductKey as short,",
+				"          CustomerKey as short,",
+				"          SalesAmount as double",
+				"     ),",
+				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     ignoreNoFilesFound: false) ~> source3",
-				"sourceProduct, source2 join(ERROR_FUNCTION('') == ERROR_FUNCTION(''),",
+				"     ignoreNoFilesFound: false) ~> sourceSales",
+				"sourceProduct, sourceCustomers join(ERROR_FUNCTION('') == ERROR_FUNCTION(''),",
 				"     joinType:'inner',",
 				"     matchType:'exact',",
 				"     ignoreSpaces: false,",
