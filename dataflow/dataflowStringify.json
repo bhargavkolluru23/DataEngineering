@@ -32,7 +32,7 @@
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false,",
 				"     documentForm: 'documentPerLine') ~> sourceStringify",
-				"sourceStringify stringify(Contact = ERROR_FUNCTION('') ? string,",
+				"sourceStringify stringify(Contact = Contact ? string,",
 				"     format: 'json') ~> stringify1",
 				"stringify1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
