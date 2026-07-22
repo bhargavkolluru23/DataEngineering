@@ -31,7 +31,7 @@
 				"     allowSchemaDrift: false,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false,",
-				"     documentForm: 'arrayOfDocuments') ~> sourceStringify",
+				"     documentForm: 'documentPerLine') ~> sourceStringify",
 				"sourceStringify stringify(Contact = Contact ? string,",
 				"     format: 'delimited',",
 				"     columnNamesAsHeader: false,",
