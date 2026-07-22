@@ -23,16 +23,11 @@
 				}
 			],
 			"scriptLines": [
-				"source(output(",
-				"          Contact as (Email as string, Phone as string),",
-				"          EmpName as string,",
-				"          EmployeeKey as boolean",
-				"     ),",
-				"     allowSchemaDrift: false,",
+				"source(allowSchemaDrift: false,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false,",
 				"     documentForm: 'arrayOfDocuments') ~> sourceStringify",
-				"sourceStringify stringify(Contact = ERROR_FUNCTION('') ? string,",
+				"sourceStringify stringify(Phones = Contact.Phone ? string,",
 				"     format: 'json') ~> stringify1",
 				"stringify1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
