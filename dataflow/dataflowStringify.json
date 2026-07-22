@@ -24,9 +24,9 @@
 			],
 			"scriptLines": [
 				"source(output(",
-				"          Contact as string,",
+				"          Contact as (Email as string, Phone as string),",
 				"          EmpName as string,",
-				"          EmployeeKey as short",
+				"          EmployeeKey as boolean",
 				"     ),",
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
