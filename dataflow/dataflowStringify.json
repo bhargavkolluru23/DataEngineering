@@ -24,7 +24,7 @@
 			],
 			"scriptLines": [
 				"source(output(",
-				"          Contact as (Email as string, Phone as string),",
+				"          Contact as (),",
 				"          EmpName as string,",
 				"          EmployeeKey as boolean",
 				"     ),",
