@@ -1,0 +1,24 @@
+{
+	"name": "CopyAndUpdateDaily Run",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "copyexceltoTablePractice",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Hour",
+				"interval": 24,
+				"startTime": "2026-07-23T07:00:00",
+				"timeZone": "India Standard Time"
+			}
+		}
+	}
+}
