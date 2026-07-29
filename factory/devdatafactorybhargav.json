@@ -1,0 +1,15 @@
+{
+	"name": "devdatafactorybhargav",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Disabled",
+			"editable": true
+		}
+	},
+	"location": "southindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "62da1aa4-0435-4f13-856b-0a63b9b08810",
+		"tenantId": "29925cf4-e84a-4542-a615-2f4a73a145dd"
+	}
+}
