@@ -135,7 +135,13 @@
 							"typeProperties": {
 								"dataset": {
 									"referenceName": "DelimitedText2",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"param_foldername": {
+											"value": "@pipeline().parameters.param_foldername",
+											"type": "Expression"
+										}
+									}
 								},
 								"fieldList": [],
 								"storeSettings": {
