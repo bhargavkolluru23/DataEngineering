@@ -80,9 +80,13 @@
 							},
 							"userProperties": [],
 							"typeProperties": {
+								"pipeline": {
+									"referenceName": "PL_LoadDataChild",
+									"type": "PipelineReference"
+								},
 								"waitOnCompletion": true,
 								"parameters": {
-									"param_foldername": {
+									"Foldername": {
 										"value": "@variables('FolderName')",
 										"type": "Expression"
 									}
