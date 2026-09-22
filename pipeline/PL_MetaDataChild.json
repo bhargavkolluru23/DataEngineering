@@ -133,9 +133,11 @@
 							},
 							"userProperties": [],
 							"typeProperties": {
-								"fieldList": [
-									"lastModified"
-								],
+								"dataset": {
+									"referenceName": "DelimitedText2",
+									"type": "DatasetReference"
+								},
+								"fieldList": [],
 								"storeSettings": {
 									"type": "AzureBlobFSReadSettings",
 									"recursive": true,
