@@ -70,7 +70,6 @@
 							},
 							"userProperties": [],
 							"typeProperties": {
-								"storedProcedureName": "[audit].[usp_RegisterFileMetadata]",
 								"storedProcedureParameters": {
 									"FileName": {
 										"value": {
@@ -94,6 +93,10 @@
 										"type": "String"
 									}
 								}
+							},
+							"linkedServiceName": {
+								"referenceName": "ASQL",
+								"type": "LinkedServiceReference"
 							}
 						},
 						{
