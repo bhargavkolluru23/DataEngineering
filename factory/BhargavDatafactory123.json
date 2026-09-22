@@ -1,0 +1,15 @@
+{
+	"name": "BhargavDatafactory123",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Disabled",
+			"editable": true
+		}
+	},
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "63bc6a40-4a55-4b9e-9e7b-ca436b20eab2",
+		"tenantId": "85092130-dd58-47c9-a824-52be4537252e"
+	}
+}
