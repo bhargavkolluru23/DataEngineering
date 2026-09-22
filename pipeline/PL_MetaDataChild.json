@@ -70,6 +70,7 @@
 							},
 							"userProperties": [],
 							"typeProperties": {
+								"storedProcedureName": "audit.usp_RegisterFileMetadata",
 								"storedProcedureParameters": {
 									"FileName": {
 										"value": {
