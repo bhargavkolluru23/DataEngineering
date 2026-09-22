@@ -87,10 +87,7 @@
 										"type": "DateTime"
 									},
 									"TableName": {
-										"value": {
-											"value": "@pipeline().parameters.param_foldername",
-											"type": "Expression"
-										},
+										"value": "",
 										"type": "String"
 									}
 								}
