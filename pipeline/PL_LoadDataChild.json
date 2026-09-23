@@ -130,7 +130,6 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"storedProcedureName": "[dw].[usp_SCD2_Generic]",
 					"storedProcedureParameters": {
 						"StagingTable": {
 							"value": {
@@ -140,6 +139,10 @@
 							"type": "String"
 						}
 					}
+				},
+				"linkedServiceName": {
+					"referenceName": "AzureSqlDatabase1",
+					"type": "LinkedServiceReference"
 				}
 			}
 		],
