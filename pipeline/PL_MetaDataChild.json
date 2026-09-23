@@ -16,7 +16,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"dataset": {
-						"referenceName": "LS_ADLS",
+						"referenceName": "DelimitedText2",
 						"type": "DatasetReference"
 					},
 					"fieldList": [
@@ -143,10 +143,6 @@
 									"parameters": {
 										"param_foldername": {
 											"value": "@pipeline().parameters.param_foldername",
-											"type": "Expression"
-										},
-										"paramFileName": {
-											"value": "@variables('FileName')",
 											"type": "Expression"
 										}
 									}
