@@ -144,23 +144,24 @@
 							"userProperties": [],
 							"typeProperties": {
 								"dataset": {
-									"referenceName": "DelimitedText2",
+									"referenceName": "DS_ADLS",
 									"type": "DatasetReference",
 									"parameters": {
 										"param_foldername": {
 											"value": "@pipeline().parameters.param_foldername",
 											"type": "Expression"
 										},
-										"paramFileName": {
+										"FileName": {
 											"value": "@variables('FileName')",
 											"type": "Expression"
 										}
 									}
 								},
-								"fieldList": [],
+								"fieldList": [
+									"lastModified"
+								],
 								"storeSettings": {
 									"type": "AzureBlobFSReadSettings",
-									"recursive": true,
 									"enablePartitionDiscovery": false
 								},
 								"formatSettings": {
