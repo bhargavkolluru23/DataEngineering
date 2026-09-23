@@ -150,6 +150,10 @@
 										"param_foldername": {
 											"value": "@pipeline().parameters.param_foldername",
 											"type": "Expression"
+										},
+										"paramFileName": {
+											"value": "@variables('FileName')",
+											"type": "Expression"
 										}
 									}
 								},
